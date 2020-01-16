@@ -5,9 +5,7 @@ import (
 	"os"
 )
 
-func main() {
-	// Set limit of numbers to be generated
-	limit := 100
+func GenerateFiles(limit int) {
 
 	oddFile, err := os.Create("odd.txt")
 	check(err)
