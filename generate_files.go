@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// GenerateFiles -- Used to generate odd.txt and even.txt with a set limit
 func GenerateFiles(limit int) {
 
 	oddFile, err := os.Create("odd.txt")
