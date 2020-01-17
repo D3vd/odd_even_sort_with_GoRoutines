@@ -15,6 +15,9 @@ func SimpleJoin() {
 	odd := readFile("odd")
 	even := readFile("even")
 
+	// TODO: Fix all goroutines are asleep error
+	// fatal error: all goroutines are asleep - deadlock!
+
 	for i := 0; i < Limit; i++ {
 		_, err := outputFile.WriteString(fmt.Sprintf("%s\n", <-odd))
 		check(err)
@@ -22,7 +25,6 @@ func SimpleJoin() {
 		_, err = outputFile.WriteString(fmt.Sprintf("%s\n", <-even))
 		check(err)
 	}
-
 }
 
 func readFile(fileName string) <-chan string {
