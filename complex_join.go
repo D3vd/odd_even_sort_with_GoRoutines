@@ -16,5 +16,9 @@ func ComplexJoinMergeSort() {
 
 	numArray := append(oddNum, evenNum...)
 
-	fmt.Println(MergeSortWithoutGoRoutines(numArray))
+	channel := make(chan []int)
+
+	MergeSortWithGoRoutines(numArray, channel)
+
+	fmt.Println(<-channel)
 }
