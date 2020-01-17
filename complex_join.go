@@ -21,21 +21,21 @@ func ComplexJoin() {
 }
 
 func readComplexFile(fileName string) []int {
-	b, err := ioutil.ReadFile("./output/complex_" + fileName + ".txt")
+	file, err := ioutil.ReadFile("./output/complex_" + fileName + ".txt")
 	check(err)
 
-	lines := strings.Split(string(b), "\n")
+	lines := strings.Split(string(file), "\n")
 	numArray := make([]int, 0, len(lines))
 
-	for _, l := range lines {
-		if len(l) == 0 {
+	for _, line := range lines {
+		if len(line) == 0 {
 			continue
 		}
 
-		n, err := strconv.Atoi(l)
+		num, err := strconv.Atoi(line)
 		check(err)
 
-		numArray = append(numArray, n)
+		numArray = append(numArray, num)
 	}
 
 	return numArray
