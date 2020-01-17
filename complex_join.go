@@ -16,6 +16,5 @@ func ComplexJoinMergeSort() {
 
 	numArray := append(oddNum, evenNum...)
 
-	fmt.Println(numArray)
 	fmt.Println(MergeSortWithoutGoRoutines(numArray))
 }
