@@ -16,11 +16,11 @@ func GenerateFiles() {
 }
 
 func generateRandomNumbers() {
-	oddFileComplex, err := os.Create("./output/oddComplex.txt")
+	oddFileComplex, err := os.Create("./output/complex_odd.txt")
 	check(err)
 	defer oddFileComplex.Close()
 
-	evenFileComplex, err := os.Create("./output/evenComplex.txt")
+	evenFileComplex, err := os.Create("./output/complex_even.txt")
 	check(err)
 	defer evenFileComplex.Close()
 
@@ -38,11 +38,11 @@ func generateRandomNumbers() {
 }
 
 func generateSimpleFiles() {
-	oddFileSimple, err := os.Create("./output/oddSimple.txt")
+	oddFileSimple, err := os.Create("./output/simple_odd.txt")
 	check(err)
 	defer oddFileSimple.Close()
 
-	evenFileSimple, err := os.Create("./output/evenSimple.txt")
+	evenFileSimple, err := os.Create("./output/simple_even.txt")
 	check(err)
 	defer evenFileSimple.Close()
 

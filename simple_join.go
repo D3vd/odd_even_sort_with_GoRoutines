@@ -6,11 +6,9 @@ import (
 	"os"
 )
 
-// var wg sync.WaitGroup
-
 // SimpleJoin -- Joins unsorted list of numbers
 func SimpleJoin() {
-	outputFile, err := os.Create("./output/outputSimple.txt")
+	outputFile, err := os.Create("./output/simple_output.txt")
 	check(err)
 	defer outputFile.Close()
 
@@ -32,7 +30,7 @@ func readFile(fileName string) <-chan string {
 
 	go func() {
 		// Open the file with list of numbers
-		file, err := os.Open("./output/" + fileName + "Simple.txt")
+		file, err := os.Open("./output/simple_" + fileName + ".txt")
 		check(err)
 		defer file.Close()
 
