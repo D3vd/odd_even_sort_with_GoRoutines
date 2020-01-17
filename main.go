@@ -1,5 +1,10 @@
 package main
 
 func main() {
-	GenerateFiles(100)
+
+	// Choose a limit
+	limit := 100
+
+	GenerateFiles(limit)
+
 }
