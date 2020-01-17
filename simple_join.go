@@ -18,7 +18,7 @@ func SimpleJoin() {
 	// TODO: Fix all goroutines are asleep error
 	// fatal error: all goroutines are asleep - deadlock!
 
-	for i := 0; i < Limit; i++ {
+	for i := 0; i < Limit/2; i++ {
 		_, err := outputFile.WriteString(fmt.Sprintf("%s\n", <-odd))
 		check(err)
 
