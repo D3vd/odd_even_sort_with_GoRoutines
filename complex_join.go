@@ -1,15 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"os"
-)
-
 // ComplexJoinMergeSort -- Sort and Join randomly generated numbers using Merge Sort
 func ComplexJoinMergeSort() {
-	outputFile, err := os.Create("./output/complex_output.txt")
-	check(err)
-	defer outputFile.Close()
 
 	// Convert Odd and Even text file values into Arrays
 	oddNum := ReadComplexFileIntoArray("odd")
@@ -23,5 +15,5 @@ func ComplexJoinMergeSort() {
 
 	MergeSortWithGoRoutines(numArray, channel)
 
-	fmt.Println(<-channel)
+	WriteArrayToFile(<-channel)
 }
