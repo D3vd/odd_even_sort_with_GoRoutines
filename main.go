@@ -1,10 +1,12 @@
 package main
 
+// Limit -- Choose the number of testcases
+var Limit int = 100
+
 func main() {
 
-	// Choose a limit
-	limit := 100
+	GenerateFiles()
 
-	GenerateFiles(limit)
+	SimpleJoin()
 
 }

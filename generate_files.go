@@ -6,7 +6,7 @@ import (
 )
 
 // GenerateFiles -- Used to generate odd.txt and even.txt with a set limit
-func GenerateFiles(limit int) {
+func GenerateFiles() {
 
 	oddFileSimple, err := os.Create("./output/oddSimple.txt")
 	check(err)
@@ -16,7 +16,7 @@ func GenerateFiles(limit int) {
 	check(err)
 	defer evenFileSimple.Close()
 
-	for i := 1; i <= limit; i++ {
+	for i := 1; i <= Limit; i++ {
 		if i%2 == 1 {
 			_, err := oddFileSimple.WriteString(fmt.Sprintf("%d\n", i))
 			check(err)
@@ -26,10 +26,4 @@ func GenerateFiles(limit int) {
 		}
 	}
 
-}
-
-func check(e error) {
-	if e != nil {
-		panic(e)
-	}
 }
