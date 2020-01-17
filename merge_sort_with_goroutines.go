@@ -11,8 +11,8 @@ func MergeSortWithGoRoutines(items []int, c chan []int) {
 
 	middle := int(arrayLength / 2)
 
-	left := MergeSortWithoutGoRoutines(items[:middle])
-	right := MergeSortWithoutGoRoutines(items[middle:])
+	left := items[:middle]
+	right := items[middle:]
 
 	leftChannel := make(chan []int, 1)
 	rightChannel := make(chan []int, 1)
