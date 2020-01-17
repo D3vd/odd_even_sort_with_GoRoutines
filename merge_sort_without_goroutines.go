@@ -1,7 +1,7 @@
 package main
 
-// MergeSortWithoutGoRotines -- Standard Merge Sort
-func MergeSortWithoutGoRotines(items []int) []int {
+// MergeSortWithoutGoRoutines -- Standard Merge Sort
+func MergeSortWithoutGoRoutines(items []int) []int {
 	var num = len(items)
 
 	if num == 1 {
@@ -21,10 +21,10 @@ func MergeSortWithoutGoRotines(items []int) []int {
 		}
 	}
 
-	return merge(MergeSortWithoutGoRotines(left), MergeSortWithoutGoRotines(right))
+	return mergeWithoutGoRoutine(MergeSortWithoutGoRoutines(left), MergeSortWithoutGoRoutines(right))
 }
 
-func merge(left, right []int) (result []int) {
+func mergeWithoutGoRoutine(left, right []int) (result []int) {
 	result = make([]int, len(left)+len(right))
 
 	i := 0
