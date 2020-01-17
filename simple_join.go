@@ -40,6 +40,7 @@ func readFile(fileName string) <-chan string {
 		for scanner.Scan() {
 			c <- scanner.Text()
 		}
+		close(c)
 	}()
 
 	return c
