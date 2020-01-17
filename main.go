@@ -9,6 +9,6 @@ func main() {
 
 	// SimpleJoin()
 
-	ComplexJoin()
+	ComplexJoinMergeSort()
 
 }
