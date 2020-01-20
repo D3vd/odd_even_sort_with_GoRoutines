@@ -1,4 +1,4 @@
-package main
+package io
 
 import (
 	"fmt"
@@ -7,15 +7,15 @@ import (
 )
 
 // GenerateFiles -- Used to generate odd.txt and even.txt with a set limit
-func GenerateFiles() {
+func GenerateFiles(Limit int) {
 
-	generateSimpleFiles()
+	generateSimpleFiles(Limit)
 
-	generateRandomNumbers()
+	generateRandomNumbers(Limit)
 
 }
 
-func generateRandomNumbers() {
+func generateRandomNumbers(Limit int) {
 	oddFileComplex, err := os.Create("./output/complex_odd.txt")
 	check(err)
 	defer oddFileComplex.Close()
@@ -37,7 +37,7 @@ func generateRandomNumbers() {
 	}
 }
 
-func generateSimpleFiles() {
+func generateSimpleFiles(Limit int) {
 	oddFileSimple, err := os.Create("./output/simple_odd.txt")
 	check(err)
 	defer oddFileSimple.Close()
