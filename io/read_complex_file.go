@@ -4,12 +4,14 @@ import (
 	"io/ioutil"
 	"strconv"
 	"strings"
+
+	"github.com/R3l3ntl3ss/odd_even_sort_with_GoRoutines/error"
 )
 
 // ReadComplexFileIntoArray -- Reads complex files and convert them into Arrays
 func ReadComplexFileIntoArray(fileName string) []int {
 	file, err := ioutil.ReadFile("./output/complex_" + fileName + ".txt")
-	check(err)
+	error.Check(err)
 
 	lines := strings.Split(string(file), "\n")
 	numArray := make([]int, 0, len(lines))
@@ -20,7 +22,7 @@ func ReadComplexFileIntoArray(fileName string) []int {
 		}
 
 		num, err := strconv.Atoi(line)
-		check(err)
+		error.Check(err)
 
 		numArray = append(numArray, num)
 	}
