@@ -13,4 +13,5 @@ func main() {
 	io.GenerateFiles(Limit)
 
 	join.Simple(Limit)
+	join.ComplexJoinMergeSort()
 }
